@@ -14,8 +14,10 @@
     <h1>Agenda de Contatos</h1>
 
     <!-- <button v-on:click="getData()">Carregar Agenda</button><br><br> -->
-    <label for="search">Buscar contato: </label>
-    <input type="text" id="search" v-model="searchText" placeholder="Entre com um nome"><br><br>
+    <div class="search">
+      <label for="search">Buscar contato: </label>
+      <input type="text" id="search" v-model="searchText" placeholder="Entre com um nome">
+    </div>
 
     <!-- <div class="card">
       <address>
@@ -29,24 +31,30 @@
       </address>
     </div> -->
 
-    <div v-if="listResult.length <= 0">
-      <h3>Nenhum contato encontrado.</h3>
-    </div>
+    <main>
+      <div v-if="listResult.length <= 0">
+        <h3>Nenhum contato encontrado.</h3>
+      </div>
+      <ul>
+        <li v-for="item, index in listResult">
+          <div class="card">
+            <address>
+              <div class="img">
+                <img v-bind:src="item.picture" v-bind:alt="item.firstName">
+              </div>
+              <br><strong>{{ item.firstName }} {{ item.lastName }}</strong>
+              <br>Email: {{item.email}}
+              <br>Phone: {{item.phone}}
+              <br>City: {{item.city}}
+              <div class="btn">
+                <button class="btn-remove" v-on:click="removeContact(index)">Excluir</button>
+              </div>
+            </address>
+          </div>
+        </li>
+      </ul>
+    </main>
 
-    <ul>
-      <li v-for="item, index in listResult">
-        <div class="card">
-          <address>
-            <br><img v-bind:src="item.picture" v-bind:alt="item.firstName">
-            <br><strong>{{ item.firstName }} {{ item.lastName }}</strong>
-            <br>Email: {{item.email}}
-            <br>Phone: {{item.phone}}
-            <br>City: {{item.city}}
-            <br><button v-on:click="removeContact(index)">Excluir</button>
-          </address>
-        </div>
-      </li>
-    </ul>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
