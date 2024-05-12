@@ -68,12 +68,12 @@ ul {
 }
 
 li {
-  width: 286px;
   display: inline-block;
   margin: auto 0;
 }
 
 .card {
+  width: 300px;
   background: var(--light);
   margin: 0 15px 15px 15px;
   padding: 30px;
@@ -86,6 +86,16 @@ li {
 
 .card:hover {
   border: 1px solid var(--emerald);
+}
+
+strong {
+  color: var(--emerald);
+  font-style: normal;
+}
+
+span {
+  font-weight: 600;
+  font-style: normal;
 }
 
 .btn,
@@ -108,8 +118,8 @@ img {
   outline: none;
   padding: 5px 10px;
   font-size: 16px;
-  font-weight: bold;
-  margin: 10px;
+  font-weight: 600;
+  margin-top: 20px;
 }
 
 .btn-remove:hover {

@@ -43,9 +43,9 @@
                 <img v-bind:src="item.picture" v-bind:alt="item.firstName">
               </div>
               <br><strong>{{ item.firstName }} {{ item.lastName }}</strong>
-              <br>Email: {{item.email}}
-              <br>Phone: {{item.phone}}
-              <br>City: {{item.city}}
+              <br><span>Email:</span> {{item.email}}
+              <br><span>Phone:</span> {{item.phone}}
+              <br><span>City:</span> {{item.city}}
               <div class="btn">
                 <button class="btn-remove" v-on:click="removeContact(index)">Excluir</button>
               </div>
